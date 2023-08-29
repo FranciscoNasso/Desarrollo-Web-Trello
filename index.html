@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <script src="JavaScript/script.js"></script>
+    <script src="JavaScript/arrastrar.js"></script>
+    <script src="JavaScript/fondos.js"></script>
+    <title>Trello</title>
+</head>
+
+<body>
+    <header class="cabezado">
+        <div class="logo">
+            <i class="fa-brands fa-trello fa-2xl"></i>
+            <h1>Trello</h1>
+        </div>
+    </header>
+
+    <main class="flex-grow-1">
+        <div class="container-fluid text-center">
+            <div id="list-container" class="list-container d-flex align-items-start">
+                <button onclick="addList(this)" class="col-xxl-2 btn btn-blur text-start text-light rounded-4 m-3 ">
+                    <i class="bi bi-plus-circle"></i>
+                    Add list
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="modalId" tabindex="-1" role="dialog"
+        aria-labelledby="modalTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content px-2 bg-black text-light">
+                <div class=" text-center border-bottom-0">
+                    <h5 class="modal-title pt-3" id="modalTitleId">Are you sure you want to delete it?</h5>
+                </div>
+                <div class="modal-footer justify-content-center border-top-0 pb-3">
+                    <button type="button" class="btn btn-outline-danger mx-2" data-bs-dismiss="modal"><i
+                            class="bi bi-x-circle"></i> No</button>
+                    <button type="button" class="btn btn-outline-success mx-2" data-bs-dismiss="modal"
+                        onclick="deleteList()"><i class="bi bi-check-circle"></i> Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="modalCard" tabindex="-1" role="dialog"
+        aria-labelledby="modalTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content px-2 bg-black text-light">
+                <div class=" text-center border-bottom-0">
+                    <h5 class="modal-title pt-3" id="modalTitleId">Are you sure you want to delete it?</h5>
+                </div>
+                <div class="modal-footer justify-content-center border-top-0 pb-3">
+                    <button type="button" class="btn btn-outline-danger mx-2" data-bs-dismiss="modal"><i
+                            class="bi bi-x-circle"></i> No</button>
+                    <button type="button" class="btn btn-outline-success mx-2" data-bs-dismiss="modal"
+                        onclick="removeCard()"><i class="bi bi-check-circle"></i> Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer pt-3 text-white">
+        <p> &copy; 2023 <strong>Francisco Nasso</strong> <i class="bi bi-trello"></i> Trello </p>
+    </footer>
+</body>
+
+</html>
